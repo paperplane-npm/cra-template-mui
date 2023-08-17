@@ -3212,11 +3212,6 @@ babel-plugin-direct-import@^1.0.0:
   dependencies:
     resolve "^1.20.0"
 
-babel-plugin-emotion@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.npmmirror.com/babel-plugin-emotion/-/babel-plugin-emotion-11.0.0.tgz#f362c9fe05493821ab8995cd5a8e7be6504b73a9"
-  integrity sha512-cVD32sIXlidaqQBr7vw0uD2o58uBeD8jILDJ2yAGT1fOmgYcE5iX27bTVMV6meiUZarIAh1iAyTqrEWV+V2dqQ==
-
 babel-plugin-import@^1.13.5:
   version "1.13.8"
   resolved "https://registry.npmmirror.com/babel-plugin-import/-/babel-plugin-import-1.13.8.tgz#782c517f6bbf2de3b1f75aaafd6d20a491c4878c"
