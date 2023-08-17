@@ -8,10 +8,10 @@
   "endOfLine": "lf",
   "importOrder": [
     "^@?[a-z]+.+",
-    "^@/((?!.scss|.css).)*$",
-    "^\\.\\.?/?s?((?!css).)+$",
-    "^@/.+.s?css$",
-    "\\.s?css$"
+    "^@/(?!.(?:.css|.scss)$).$",
+    "^\\.\\.?/(?!.*.(css|scss)$)",
+    "^.(?!(css|scss)$)[^.]*$",
+    "(.css|.scss)$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": false,
