@@ -14,30 +14,19 @@ module.exports = {
 
     addWebpackAlias({ '@': 'src/' }),
 
-    fixBabelImports('mui-base', {
-      libraryName: '@mui/base',
+    fixBabelImports('mui-core', {
+      libraryName: '@mui/material',
       libraryDirectory: '',
       camel2DashComponentName: false,
     }),
 
-    fixBabelImports('mui-icon', {
-      libraryName: '@mui/icon',
-      libraryDirectory: '',
-      camel2DashComponentName: false,
-    }),
-
-    fixBabelImports('mui-lab', {
-      libraryName: '@mui/lab',
+    fixBabelImports('mui-icons', {
+      libraryName: '@mui/icons-material',
       libraryDirectory: '',
       camel2DashComponentName: false,
     }),
 
     addBabelPlugin(['lodash']),
-
-    addBabelPlugin([
-      'babel-plugin-direct-import',
-      { modules: ['@mui/material', '@mui/icons-material'] },
-    ]),
 
     addWebpackModuleRule({
       test: /\.scss$/,
