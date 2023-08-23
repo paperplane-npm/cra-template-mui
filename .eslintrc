@@ -1,5 +1,13 @@
 {
+  "root": true,
+  "plugins": [
+    "prettier"
+  ],
   "extends": [
-    "react-app"
-  ]
+    "react-app",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+  }
 }
