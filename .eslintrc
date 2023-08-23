@@ -1,13 +1,15 @@
 {
-  "root": true,
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": [],
   "extends": [
     "react-app",
-    "plugin:react-hooks/recommended",
+    "react-app/jest",
     "plugin:prettier/recommended"
   ],
   "rules": {
+    "curly": "error",
+    "one-var": [
+      "error",
+      "never"
+    ]
   }
 }
