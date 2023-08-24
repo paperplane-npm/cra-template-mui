@@ -42,6 +42,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@types/customize-cra": "^1.0.4",
     "@types/loadable__component": "^5.13.4",
     "@types/lodash": "^4.14.186",
     "@types/node": "^16.11.65",
