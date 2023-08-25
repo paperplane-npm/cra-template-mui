@@ -1,17 +1,23 @@
-import loadable from '@loadable/component'
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom'
 
 import MainLayout from '@/components/layout/MainLyout'
+import FullpageLoading from '@/components/loading/FullpageLoading'
 import HomePage from '@/pages'
+import Page404 from '@/pages/fallbacks/page-404'
 
-const UserPage = loadable(() => import('@/pages/user'))
+import lazy from './lazy'
 
-const routerConfig: RouteObject[] = [
+export const routerConfig: RouteObject[] = [
   {
     element: <MainLayout />,
     children: [
       { path: '/', element: <HomePage /> },
-      { path: '/user', element: <UserPage /> },
+
+      { path: '/check-zustand', element: lazy(() => import('@/pages/check-zustand')) },
+      { path: '/check-emotion', element: lazy(() => import('@/pages/check-emotion')) },
+      { path: '/check-sass', element: lazy(() => import('@/pages/check-sass')) },
+
+      { path: '*', element: <Page404 /> },
     ],
   },
 ]
@@ -19,5 +25,6 @@ const routerConfig: RouteObject[] = [
 const router = createBrowserRouter(routerConfig, { basename: process.env.PUBLIC_URL })
 
 export default function RouterEntry(): RC {
-  return <RouterProvider router={router} />
+  // 注意此处的 fallbackElement 仅适用于 loader() 加载过程
+  return <RouterProvider router={router} fallbackElement={<FullpageLoading />} />
 }

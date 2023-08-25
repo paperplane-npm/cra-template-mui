@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Stack } from '@mui/material'
 import { Link } from 'react-router-dom'
 
 /** 首页 */
@@ -6,9 +6,21 @@ export default function HomePage(): RC {
   return (
     <div>
       我是首页
-      <Link to="/user">
-        <Button variant="contained">点我去用户页</Button>
-      </Link>
+      <div>
+        <Stack spacing={1}>
+          <Link to="/check-zustand">
+            <Button variant="contained">点我去 zustand 测试页</Button>
+          </Link>
+
+          <Link to="/check-emotion">
+            <Button variant="contained">点我去 emotion 测试页</Button>
+          </Link>
+
+          <Link to="/check-sass">
+            <Button variant="contained">点我去 sass 测试页</Button>
+          </Link>
+        </Stack>
+      </div>
     </div>
   )
 }

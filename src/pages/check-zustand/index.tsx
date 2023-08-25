@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 import { useUserStore } from '@/services/user'
 
 /** 用户页面 */
-export default function UserPage(): RC {
+export default function CheckZustand(): RC {
   const userStore = useUserStore()
 
   const signInHandler = () => {
@@ -12,7 +12,7 @@ export default function UserPage(): RC {
 
   return (
     <div>
-      我是用户页面
+      我是 zustand 测试页（能正常登录、后退用户名不消失，表示 zustand 正常工作）
       <Button onClick={signInHandler} variant="contained">
         点我登录
       </Button>
