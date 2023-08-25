@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom/client'
 
 import RouterEntry from './router'
 
-import '@/global/app.scss'
+import '@/styles/app.scss'
 
 const theme = createTheme(zhCN)
 
