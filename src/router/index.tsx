@@ -16,6 +16,7 @@ export const routerConfig: RouteObject[] = [
       { path: '/check-zustand', element: lazy(() => import('@/pages/check-zustand')) },
       { path: '/check-emotion', element: lazy(() => import('@/pages/check-emotion')) },
       { path: '/check-sass', element: lazy(() => import('@/pages/check-sass')) },
+      { path: '/check-toast', element: lazy(() => import('@/pages/check-toast')) },
 
       { path: '*', element: <Page404 /> },
     ],

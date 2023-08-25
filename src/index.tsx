@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { LocalizationProvider, zhCN as zhCNXDateLocal } from '@mui/x-date-pickers'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import zhCNDateFns from 'date-fns/locale/zh-CN'
+import { SnackbarProvider } from 'notistack'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -24,7 +25,9 @@ root.render(
       localeText={zhCNXDateLocal.components.MuiLocalizationProvider.defaultProps.localeText}
     >
       <ThemeProvider theme={theme}>
-        <RouterEntry />
+        <SnackbarProvider>
+          <RouterEntry />
+        </SnackbarProvider>
       </ThemeProvider>
     </LocalizationProvider>
   </React.Fragment>

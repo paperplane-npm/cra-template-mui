@@ -19,6 +19,10 @@ export default function HomePage(): RC {
           <Link to="/check-sass">
             <Button variant="contained">点我去 sass 测试页</Button>
           </Link>
+
+          <Link to="/check-toast">
+            <Button variant="contained">点我去 toast 测试页</Button>
+          </Link>
         </Stack>
       </div>
     </div>
