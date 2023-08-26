@@ -9,23 +9,23 @@ export default function HomePage(): RC {
 
       <div>
         <Stack spacing={1}>
-          <Link to="/check-zustand">
+          <Link to="/check/check-zustand">
             <Button variant="contained">点我去 zustand 测试页</Button>
           </Link>
 
-          <Link to="/check-emotion">
+          <Link to="/check/check-emotion">
             <Button variant="contained">点我去 emotion 测试页</Button>
           </Link>
 
-          <Link to="/check-sass">
+          <Link to="/check/check-sass">
             <Button variant="contained">点我去 sass 测试页</Button>
           </Link>
 
-          <Link to="/check-toast">
+          <Link to="/check/check-toast">
             <Button variant="contained">点我去 toast 测试页</Button>
           </Link>
 
-          <Link to="/check-request">
+          <Link to="/check/check-request">
             <Button variant="contained">点我去 request 测试页</Button>
           </Link>
         </Stack>

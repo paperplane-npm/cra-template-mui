@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate, RouteObject, RouterProvider } from 'reac
 import MainLayout from '@/components/layout/MainLyout'
 import FullpageLoading from '@/components/loading/FullpageLoading'
 import HomePage from '@/pages'
+import CheckPage from '@/pages/check'
 import Page404 from '@/pages/fallbacks/page-404'
 
 import lazy from './lazy'
@@ -11,15 +12,21 @@ export const routerConfig: RouteObject[] = [
   {
     element: <MainLayout />,
     children: [
-      { path: '/', element: <HomePage /> },
+      { path: '', element: <HomePage /> },
 
-      { path: '/check-zustand', element: lazy(() => import('@/pages/check-zustand')) },
-      { path: '/check-emotion', element: lazy(() => import('@/pages/check-emotion')) },
-      { path: '/check-sass', element: lazy(() => import('@/pages/check-sass')) },
-      { path: '/check-toast', element: lazy(() => import('@/pages/check-toast')) },
-      { path: '/check-request', element: lazy(() => import('@/pages/check-request')) },
+      {
+        path: 'check',
+        element: <CheckPage />,
+        children: [
+          { path: 'check-zustand', element: lazy(() => import('@/pages/check/check-zustand')) },
+          { path: 'check-emotion', element: lazy(() => import('@/pages/check/check-emotion')) },
+          { path: 'check-sass', element: lazy(() => import('@/pages/check/check-sass')) },
+          { path: 'check-toast', element: lazy(() => import('@/pages/check/check-toast')) },
+          { path: 'check-request', element: lazy(() => import('@/pages/check/check-request')) },
+        ],
+      },
 
-      { path: '/404', element: <Page404 /> },
+      { path: '404', element: <Page404 /> },
       { path: '*', element: <Navigate to="/404" replace /> },
     ],
   },
