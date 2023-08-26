@@ -12,7 +12,7 @@ export const routerConfig: RouteObject[] = [
   {
     element: <MainLayout />,
     children: [
-      { path: '', element: <HomePage /> },
+      { index: true, element: <HomePage /> },
 
       {
         path: 'check',
