@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Stack } from '@mui/material'
 
 import { useUserStore } from '@/services/user'
 
@@ -10,12 +10,22 @@ export default function CheckZustand(): RC {
     userStore.signIn({ id: 'user1', name: 'Test User' })
   }
 
+  const signOutHandler = () => {
+    userStore.logout()
+  }
+
   return (
     <div>
-      我是 zustand 测试页（能正常登录、后退用户名不消失，表示 zustand 正常工作）
-      <Button onClick={signInHandler} variant="contained">
-        点我登录
-      </Button>
+      <p>我是 zustand 测试页（能正常登录、后退用户名不消失，表示 zustand 正常工作）</p>
+
+      <Stack direction="row" spacing={2}>
+        <Button onClick={signInHandler} variant="contained">
+          点我登录
+        </Button>
+        <Button onClick={signOutHandler} variant="contained">
+          点我注销
+        </Button>
+      </Stack>
     </div>
   )
 }

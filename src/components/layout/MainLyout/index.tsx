@@ -1,3 +1,4 @@
+import { Container } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 
 import { useUserStore } from '@/services/user'
@@ -8,9 +9,9 @@ export default function MainLayout(): RC {
   const username = currentUser?.name
 
   return (
-    <div>
+    <Container>
       <p>我是页面 Layout，当前登录用户： {username || '(未登录)'}</p>
       <Outlet />
-    </div>
+    </Container>
   )
 }

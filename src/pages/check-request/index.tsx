@@ -44,7 +44,7 @@ export default function CheckRequest(): RC {
     <div>
       <p>request 测试页面（测试 devServer 配置是否生效，以及 changeOrigin、全局错误处理）</p>
 
-      <Stack direction="row" spacing={2}>
+      <Stack spacing={2} width={300}>
         <Button variant="contained" onClick={requestBaidu}>
           测试 devServer（请求百度）
         </Button>

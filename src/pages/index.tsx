@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 export default function HomePage(): RC {
   return (
     <div>
-      我是首页
+      <p>我是首页</p>
+
       <div>
         <Stack spacing={1}>
           <Link to="/check-zustand">
