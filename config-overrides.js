@@ -10,9 +10,20 @@ const {
 
 module.exports = {
   webpack: override(
+    addWebpackAlias({ '@': 'src/' }),
+
+    addWebpackModuleRule({
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        { loader: 'sass-loader', options: { additionalData: '@import "~@/styles/global.scss";' } },
+      ],
+    }),
+
     addBabelPlugins(['@emotion']),
 
-    addWebpackAlias({ '@': 'src/' }),
+    addBabelPlugin(['lodash']),
 
     fixBabelImports('mui-core', {
       libraryName: '@mui/material',
@@ -24,17 +35,6 @@ module.exports = {
       libraryName: '@mui/icons-material',
       libraryDirectory: '',
       camel2DashComponentName: false,
-    }),
-
-    addBabelPlugin(['lodash']),
-
-    addWebpackModuleRule({
-      test: /\.scss$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        { loader: 'sass-loader', options: { additionalData: '@import "~@/styles/global.scss";' } },
-      ],
     })
   ),
 
