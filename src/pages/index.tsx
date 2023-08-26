@@ -1,5 +1,6 @@
 import { Button, Stack } from '@mui/material'
-import { Link } from 'react-router-dom'
+
+import { router } from '@/router'
 
 /** 首页 */
 export default function HomePage(): RC {
@@ -9,25 +10,25 @@ export default function HomePage(): RC {
 
       <div>
         <Stack spacing={1}>
-          <Link to="/check/check-zustand">
-            <Button variant="contained">点我去 zustand 测试页</Button>
-          </Link>
+          <Button onClick={() => void router.navigate('/check/check-zustand')} variant="contained">
+            点我去 zustand 测试页
+          </Button>
 
-          <Link to="/check/check-emotion">
-            <Button variant="contained">点我去 emotion 测试页</Button>
-          </Link>
+          <Button onClick={() => void router.navigate('/check/check-emotion')} variant="contained">
+            点我去 emotion 测试页
+          </Button>
 
-          <Link to="/check/check-sass">
-            <Button variant="contained">点我去 sass 测试页</Button>
-          </Link>
+          <Button onClick={() => void router.navigate('/check/check-sass')} variant="contained">
+            点我去 sass 测试页
+          </Button>
 
-          <Link to="/check/check-toast">
-            <Button variant="contained">点我去 toast 测试页</Button>
-          </Link>
+          <Button onClick={() => void router.navigate('/check/check-toast')} variant="contained">
+            点我去 toast 测试页
+          </Button>
 
-          <Link to="/check/check-request">
-            <Button variant="contained">点我去 request 测试页</Button>
-          </Link>
+          <Button onClick={() => void router.navigate('/check/check-request')} variant="contained">
+            点我去 request 测试页
+          </Button>
         </Stack>
       </div>
     </div>

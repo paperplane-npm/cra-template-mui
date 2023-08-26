@@ -32,7 +32,7 @@ export const routerConfig: RouteObject[] = [
   },
 ]
 
-const router = createBrowserRouter(routerConfig, { basename: process.env.PUBLIC_URL })
+export const router = createBrowserRouter(routerConfig, { basename: process.env.PUBLIC_URL })
 
 export default function RouterEntry(): RC {
   // 注意此处的 fallbackElement 仅适用于 loader() 加载过程
