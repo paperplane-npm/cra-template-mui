@@ -46,7 +46,6 @@
     "@types/customize-cra": "^1.0.4",
     "@types/loadable__component": "^5.13.4",
     "@types/lodash": "^4.14.186",
-    "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@types/store": "^2.0.2",
