@@ -43,8 +43,23 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://localhost:4000',
+        changeOrigin: true,
         pathRewrite: {
           '^/api': '',
+        },
+      },
+      '/test-devserver-baidu': {
+        target: 'https://www.baidu.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/test-devserver-baidu': '',
+        },
+      },
+      '/paperplane': {
+        target: 'https://paperplane.cc',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/paperplane': '',
         },
       },
     },
