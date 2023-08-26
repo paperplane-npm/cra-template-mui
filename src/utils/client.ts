@@ -10,34 +10,26 @@ import { enqueueSnackbar } from 'notistack'
 /** 完全原始的 axios client */
 const rawClient = axios.create()
 
-const axiosSimpleConfig: CreateAxiosDefaults = {
+const axiosPureConfig: CreateAxiosDefaults = {
   baseURL: process.env.REACT_APP_API_BASE_URL,
   timeout: 60000,
 }
 
-/** 简版 client，只提供了默认配置，不使用拦截器 */
-const simpleClient = axios.create(axiosSimpleConfig)
-simpleClient.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
+/** 纯净版 client，只提供了默认配置，不使用拦截器 */
+const pureClient = axios.create(axiosPureConfig)
+pureClient.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 
 /** 自定义追加的 axios 请求配置 */
 interface IAxiosRequestConfigExtend {
   /** 设为 `true` 可以禁用全局错误响应提示，默认 `false` */
   quiet?: boolean
-
-  /** 对于成功的请求会提取数据的 `data` 字段返回，设为 `false` 则不会提取数据，默认 `true` */
-  extractSuccessData?: boolean
-
-  /** 对于失败的请求，设为 `true` 会提取 `data` 字段，默认 `false` */
-  extractErrorData?: boolean
 }
 
 interface IAxiosRequestConfig<P = any> extends AxiosRequestConfig<P>, IAxiosRequestConfigExtend {}
 
 const axiosDefaultConfig: CreateAxiosDefaults & IAxiosRequestConfigExtend = {
-  ...axiosSimpleConfig,
+  ...axiosPureConfig,
   quiet: false,
-  extractSuccessData: true,
-  extractErrorData: false,
 }
 
 /** 默认的 axios client */
@@ -74,7 +66,7 @@ function errorResponseHandler(error?: AxiosResponse<IErrorBody<any>> | AxiosErro
 client.interceptors.response.use(
   function (response: AxiosResponse) {
     const config: IAxiosRequestConfig = response.config
-    const { quiet, extractSuccessData, extractErrorData } = config
+    const { quiet } = config
 
     const reponseBody: IResponseBody = response.data
 
@@ -89,34 +81,28 @@ client.interceptors.response.use(
         errorResponseHandler(response)
       }
 
-      return Promise.reject(extractErrorData ? (reponseBody as IErrorBody)?.data : reponseBody)
+      return Promise.reject(reponseBody)
     }
 
-    return Promise.resolve(
-      (extractSuccessData ? (reponseBody as ISuccessBody)?.data : reponseBody) || null
-    )
+    return Promise.resolve((reponseBody as ISuccessBody)?.data || null)
   },
 
   // 处理原生请求错误
   function (error: AxiosError<IErrorBody>) {
     const config: IAxiosRequestConfig | undefined = error.config
-    const { quiet, extractErrorData } = config || axiosDefaultConfig
+    const { quiet } = config || axiosDefaultConfig
 
     if (!quiet) {
       errorResponseHandler(error)
     }
 
-    return Promise.reject(
-      extractErrorData
-        ? error?.response?.data
-        : {
-            success: false,
-            data: error?.response?.data,
-            message: error.message,
-            code: error?.response?.status,
-          }
-    )
+    return Promise.reject({
+      success: false,
+      data: error?.response?.data,
+      message: error?.message,
+      code: error?.response?.status,
+    })
   }
 )
 
-export { rawClient, simpleClient, client }
+export { rawClient, pureClient, client }
