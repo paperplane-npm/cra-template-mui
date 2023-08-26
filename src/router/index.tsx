@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouteObject, RouterProvider } from 'react-router-dom'
 
 import MainLayout from '@/components/layout/MainLyout'
 import FullpageLoading from '@/components/loading/FullpageLoading'
@@ -19,7 +19,8 @@ export const routerConfig: RouteObject[] = [
       { path: '/check-toast', element: lazy(() => import('@/pages/check-toast')) },
       { path: '/check-request', element: lazy(() => import('@/pages/check-request')) },
 
-      { path: '*', element: <Page404 /> },
+      { path: '/404', element: <Page404 /> },
+      { path: '*', element: <Navigate to="/404" replace /> },
     ],
   },
 ]
