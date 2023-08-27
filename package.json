@@ -1,6 +1,6 @@
 {
   "name": "@paperplane/cra-template-mui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A great Create-React-App template for @mui",
   "homepage": "",
   "author": "jia-niang <1@paperplane.cc>",
@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/customize-cra": "^1.0.4",
     "@types/loadable__component": "^5.13.4",
     "@types/lodash": "^4.14.186",
