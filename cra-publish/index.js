@@ -28,6 +28,8 @@ const exclude = [
   '.drone.yml',
   '.gitignore',
   'package.json',
+  '.npmrc',
+  '.yarnrc',
   'yarn.lock',
   'package-lock.json',
   '.git',
