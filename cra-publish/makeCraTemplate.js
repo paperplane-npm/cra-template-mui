@@ -9,7 +9,6 @@ for (const [key, value] of Object.entries(packageJson)) {
     newPackageJson[key] = value
   }
 }
-delete newPackageJson.devDependencies['release-it']
 delete newPackageJson.devDependencies['fs-extra']
 delete newPackageJson.scripts['prepublishOnly']
 delete newPackageJson.scripts['release']
