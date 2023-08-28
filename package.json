@@ -26,7 +26,7 @@
     "build": "react-app-rewired build",
     "eject": "react-app-rewired eject",
     "prepublishOnly": "node ./cra-publish/index.js",
-    "release": "release-it"
+    "release": "release-it --ci --no-git --no-increment"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.11.0",
