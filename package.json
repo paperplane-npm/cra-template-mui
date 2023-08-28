@@ -87,6 +87,10 @@
       "last 1 safari version"
     ]
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "files": [
     "template/**",
     "template.json"
