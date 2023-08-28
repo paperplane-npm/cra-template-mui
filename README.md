@@ -1,4 +1,4 @@
-# @paperplane/cra-template-mui [![npm](https://img.shields.io/npm/v/paperplane/cra-template-mui)](https://www.npmjs.com/package/@paperplane/cra-template-mui)
+# @paperplane/cra-template-mui [![npm](https://img.shields.io/npm/v/@paperplane/cra-template-mui)](https://www.npmjs.com/package/@paperplane/cra-template-mui)
 
 基于 `@mui/material` 的 Create-React-App 模板。 
 
