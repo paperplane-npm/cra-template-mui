@@ -18,7 +18,7 @@ steps:
         path: /usr/local/share/.cache/yarn
     commands:
       - yarn
-      - yarn run publish
+      - yarn release
 
 volumes:
   - name: npmcache
