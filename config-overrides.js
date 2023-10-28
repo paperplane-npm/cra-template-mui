@@ -1,7 +1,6 @@
 const {
   override,
   overrideDevServer,
-  addBabelPlugins,
   addWebpackAlias,
   fixBabelImports,
   addWebpackModuleRule,
@@ -21,7 +20,7 @@ module.exports = {
       ],
     }),
 
-    addBabelPlugins(['@emotion']),
+    addBabelPlugin(['@emotion']),
 
     addBabelPlugin(['lodash']),
 
