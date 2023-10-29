@@ -1,6 +1,6 @@
 {
   "name": "@paperplane/cra-template-mui",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A great Create-React-App template for @mui",
   "homepage": "",
   "author": "jia-niang <1@paperplane.cc>",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.4",

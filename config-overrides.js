@@ -1,3 +1,4 @@
+const { addBabelPreset } = require('customize-cra')
 const {
   override,
   overrideDevServer,
@@ -20,9 +21,11 @@ module.exports = {
       ],
     }),
 
+    addBabelPlugin(['lodash']),
+
     addBabelPlugin(['@emotion']),
 
-    addBabelPlugin(['lodash']),
+    addBabelPreset(['@emotion/babel-preset-css-prop']),
 
     fixBabelImports('mui-core', {
       libraryName: '@mui/material',
