@@ -50,6 +50,8 @@ module.exports = {
           '^/api': '',
         },
       },
+
+      // 仅测试用。使用时请删去 ↓
       '/test-devserver-baidu': {
         target: 'https://www.baidu.com',
         changeOrigin: true,
@@ -57,8 +59,10 @@ module.exports = {
           '^/test-devserver-baidu': '',
         },
       },
+
+      // 仅测试用。使用时请删去 ↓
       '/paperplane': {
-        target: 'https://paperplane.cc',
+        target: 'https://app.paperplane.cc',
         changeOrigin: true,
         pathRewrite: {
           '^/paperplane': '',
