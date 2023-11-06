@@ -12,7 +12,7 @@ npx create-react-app <你的应用名> --template @paperplane/mui
 
 使用 Create-React-App 或组件库提供的 CLI 工具新建项目时，存在这些问题：
 
-- 大部分常用的包（如 `lodash`、`classnames`）都需要再安装一遍；
+- 大部分常用的包（如 `lodash`）都需要再安装一遍；
 - 没有样板代码，例如路由配置、入口 Provider、全局 Layout 布局、请求拦截器等，这些都需要去复制一遍；
 - 默认的插件配置无法满足需求，必须再使用一些工具（如 `craco`）来定制 Webpack 插件。
 
