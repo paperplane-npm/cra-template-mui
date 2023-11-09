@@ -1,5 +1,7 @@
 # @paperplane/cra-template-mui
 
+由 [@paperplane/cra-template-mui](https://www.npmjs.com/package/@paperplane/cra-template-mui) 创建，版本 %VERSION%。
+
 # 指令
 
 ```bash
