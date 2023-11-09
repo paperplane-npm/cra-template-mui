@@ -4,7 +4,18 @@ const { execSync } = require('child_process')
 const packageJson = JSON.parse(String(fs.readFileSync('./package.json')))
 const { name, version } = packageJson
 
-const npmVersion = String(execSync(`npm view ${name} version`)).trim()
+function getNpmVersion() {
+  try {
+    const result = execSync(`npm view ${name} version`)
+    const version = String(result).trim()
+
+    return version
+  } catch {
+    return '0.0.0'
+  }
+}
+
+const npmVersion = getNpmVersion()
 const shouldPublish = version !== npmVersion
 
 console.log()

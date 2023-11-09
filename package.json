@@ -1,6 +1,6 @@
 {
   "name": "@paperplane/cra-template-mui",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A great Create-React-App template for @mui",
   "homepage": "",
   "author": "jia-niang <1@paperplane.cc>",
@@ -75,6 +75,7 @@
     "fs-extra": "^11.1.1",
     "prettier": "^3.0.2"
   },
+  "eslintConfig": {},
   "browserslist": {
     "production": [
       ">0.2%",
