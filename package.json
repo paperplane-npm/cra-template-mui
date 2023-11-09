@@ -1,7 +1,7 @@
 {
   "name": "@paperplane/cra-template-mui",
-  "version": "1.1.5",
-  "description": "A great Create-React-App template for @mui",
+  "version": "1.1.6",
+  "description": "A great Create-React-App template for @mui.",
   "homepage": "",
   "author": "jia-niang <1@paperplane.cc>",
   "license": "MIT",
