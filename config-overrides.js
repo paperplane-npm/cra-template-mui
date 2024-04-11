@@ -13,11 +13,24 @@ module.exports = {
     addWebpackAlias({ '@': 'src/' }),
 
     addWebpackModuleRule({
+      test: /\.less$/i,
+      use: [
+        'style-loader',
+        'css-loader',
+        { loader: 'less-loader', options: { additionalData: '@import "~@/styles/global.less";' } },
+      ],
+    }),
+
+    addWebpackModuleRule({
       test: /\.scss$/,
       use: [
         'style-loader',
         'css-loader',
-        { loader: 'sass-loader', options: { additionalData: '@import "~@/styles/global.scss";' } },
+        { loader: 'resolve-url-loader', options: {} }, // 解决 Sass 的 url() 相对路径问题
+        {
+          loader: 'sass-loader',
+          options: { sourceMap: true, additionalData: '@import "~@/styles/global.scss";' },
+        },
       ],
     }),
 

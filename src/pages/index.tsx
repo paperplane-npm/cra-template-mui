@@ -22,6 +22,10 @@ export default function HomePage(): RC {
             点我去 sass 测试页
           </Button>
 
+          <Button onClick={() => void router.navigate('/check/check-less')} variant="contained">
+            点我去 less 测试页
+          </Button>
+
           <Button onClick={() => void router.navigate('/check/check-toast')} variant="contained">
             点我去 toast 测试页
           </Button>
