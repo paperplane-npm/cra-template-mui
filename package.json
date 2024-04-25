@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PaperplaneJS/cra-template-mui"
+    "url": "https://github.com/paperplane-npm/cra-template-mui"
   },
   "bugs": {
-    "url": "https://github.com/PaperplaneJS/cra-template-mui/issues"
+    "url": "https://github.com/paperplane-npm/cra-template-mui/issues"
   },
   "scripts": {
     "dev": "yarn start",
